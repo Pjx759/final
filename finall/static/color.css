@@ -1,0 +1,128 @@
+body {
+  font-family:      Verdana, Geneva, Arial, sans-serif;
+  font-size:        medium;
+  background:       -webkit-linear-gradient(top,#bfa3f3,#b0c4de,powderblue);
+  background-color: #b0c4de;
+  margin-top:       10%;
+  margin-bottom:    10%;
+  margin-left:      20%;
+  margin-right:     20%;
+  border:           5px dotted gray;
+  padding:          10px 10px 10px 10px;
+}
+a {
+  text-decoration:  none;
+  font-weight:      600;
+}
+a:hover {
+  text-decoration:  underline;
+}
+a img {
+  border:           0;
+}
+h2 {
+  font-size:        150%;
+}
+table {
+  margin-left:      40px;
+  margin-right:     40px;
+  caption-side:     bottom;
+  border-collapse:  collapse;
+}
+td, th {
+  padding:          5px;
+  text-align:       left;
+}
+.copyright {
+  font-size:        75%;
+  font-style:       italic;
+}
+.slogan {
+  font-size:        75%;
+  font-style:       italic;
+}
+.confirmentry {
+  font-weight:      600;
+}
+
+/*** Tables ***/
+
+table {
+font-size:          1em;
+background-color: #bfa3f3;
+border:             1px solid #909090;
+color:              #2a2a2a;
+padding:            10px 10px 4px;
+border-collapse:    collapse;
+}
+
+td, th {
+border:             thin dotted gray;
+}
+
+/*** Inputs ***/
+input[type=text] {
+  font-size:        115%;
+  width:            30em;
+}
+input[type=submit] {
+  font-size:        125%;
+}
+select {
+  font-size:        125%;
+}
+.header {
+    padding: 50px;
+    text-align: center;
+    background: #ffab89;
+    color: white;
+}
+
+.header h1 {
+    font-size: 40px;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: gainsboro;
+    padding-left:45%;
+    line-height:48px;
+
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px 20px;
+    weight: 40px;
+    text-decoration: none;
+}
+
+.navbar a.right {
+    float: right;
+}
+
+.navbar a:hover {
+    background-color: #bfddff;
+    color: #000000;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.travleCN {
+   font-weight: bold;
+   weight:70px;
+   height: 35px;
+}
+
+footer {
+  text-align: center;
+  color: black;
+  font-size: 17px;
+}

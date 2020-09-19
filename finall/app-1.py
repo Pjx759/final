@@ -18,7 +18,7 @@ import plotly.io as pio
 # py.offline.init_notebook_mode()
 # cf.set_config_file(offline=True, theme="ggplot")
 
-app = Flask(__name__,static_folder="templates")
+app = Flask(__name__)
 
 
 
@@ -43,7 +43,7 @@ df
 @app.route('/国际旅游收入世界地图',methods=['POST'])
 def 国际旅游收入世界地图():
     return render_template('G.html',
-							story = '(1)国际旅游收入（占总出口的百分比）是指国际入境游客的支出，包括支付给本国承运人的国际运输费用。  (2)从国际旅游收入的折线图我们可以发现，2009年-2011年呈下降趋势，2011年-2016年呈上升趋势；2016年时世界国际旅游收入的平均值最高，2009年的平均值仅次于2016年。(3)从国际旅游收入的时间轴-世界地图我们可以发现，非洲、东南亚国家地区的国际旅游收入变化很大，中国呈下降趋势。(3)估计中国下降趋势的原因：1）其它行业发展迅速，占比多； 2）旅游文化传播不足，缺少能够吸引外国人的动力；<br></br>因此，本次主题定为探究中国旅游业的发展，期望能给出合理性的建议，不仅只是为了实现经济上的收益，同时也为了可以弘扬中华文化传播。',
+							story = '(1)国际旅游收入（占总出口的百分比）是指国际入境游客的支出，包括支付给本国承运人的国际运输费用。<br></br>(2)从国际旅游收入的折线图我们可以发现，2009年-2011年呈下降趋势，2011年-2016年呈上升趋势；2016年时世界国际旅游收入的平均值最高，2009年的平均值仅次于2016年。<br></br>(3)从国际旅游收入的时间轴-世界地图我们可以发现，非洲、东南亚国家地区的国际旅游收入变化很大，中国呈下降趋势。<br></br>(3)估计中国下降趋势的原因：1）其它行业发展迅速，占比多； 2）旅游文化传播不足，缺少能够吸引外国人的动力；<br></br>因此，本次主题定为探究中国旅游业的发展，期望能给出合理性的建议，不仅只是为了实现经济上的收益，同时也为了可以弘扬中华文化传播。',
 							the_plot_all=timeline_map())
 
 def timeline_map() -> Timeline:
@@ -85,7 +85,7 @@ data3=data2.iloc[-1]
 @app.route('/国际旅游收入折线图',methods=['POST'])
 def 国际旅游收入():
     return render_template('G.html',
-                           							story = '(1)国际旅游收入（占总出口的百分比）是指国际入境游客的支出，包括支付给本国承运人的国际运输费用。(2)从国际旅游收入的折线图我们可以发现，2009年-2011年呈下降趋势，2011年-2016年呈上升趋势；2016年时世界国际旅游收入的平均值最高，2009年的平均值仅次于2016年。(3)从国际旅游收入的时间轴-世界地图我们可以发现，非洲、东南亚国家地区的国际旅游收入变化很大，中国呈下降趋势。(3)估计中国下降趋势的原因：1）其它行业发展迅速，占比多； 2）旅游文化传播不足，缺少能够吸引外国人的动力；因此，本次主题定为探究中国旅游业的发展，期望能给出合理性的建议，不仅只是为了实现经济上的收益，同时也为了可以弘扬中华文化传播。',
+                           							story = '(1)国际旅游收入（占总出口的百分比）是指国际入境游客的支出，包括支付给本国承运人的国际运输费用。<br></br>(2)从国际旅游收入的折线图我们可以发现，2009年-2011年呈下降趋势，2011年-2016年呈上升趋势；2016年时世界国际旅游收入的平均值最高，2009年的平均值仅次于2016年。<br></br>(3)从国际旅游收入的时间轴-世界地图我们可以发现，非洲、东南亚国家地区的国际旅游收入变化很大，中国呈下降趋势。<br></br>(3)估计中国下降趋势的原因：1）其它行业发展迅速，占比多； 2）旅游文化传播不足，缺少能够吸引外国人的动力；<br></br>因此，本次主题定为探究中国旅游业的发展，期望能给出合理性的建议，不仅只是为了实现经济上的收益，同时也为了可以弘扬中华文化传播。',
                            the_plot_all=Line_base())
 def Line_base() -> Line:
     x = ["{}".format(i) for i in range(2009, 2018)]
@@ -112,15 +112,16 @@ def Line_base() -> Line:
 
 
 #页面
-# @app.route('/中国旅游业',methods=['POST'])
-# def CHINA_TOUR():
-# 	fig = 中国旅游业收入.T.iplot(kind="scatter",xTitle="年份",yTitle="金额", title="中国旅游业收入" , asFigure=True)
-# 	py.offline.plot(fig, filename="中国旅游业.html",auto_open=False)
-# 	with open("中国旅游业.html", encoding="utf8", mode="r") as f:
-# 		plot_all = "".join(f.readlines())
-# 	return render_template('G.html',
-#                                story='(1)无论是国际旅游外汇收入还是国内旅游总花费，这十年来都是呈增长的趋势。<br></br>(2)国际旅游外汇收入在2009年-2014年平缓增长，但在2014年增长，国内旅游总花费在10年里都是平缓增长。'
-# 							,the_plot_all = plot_all)
+@app.route('/中国旅游业',methods=['POST'])
+def CHINA_TOUR():
+	fig = 中国旅游业收入.T.iplot(kind="scatter",xTitle="年份",yTitle="金额", title="中国旅游业收入" , asFigure=True)
+	py.offline.plot(fig, filename="中国旅游业.html",auto_open=False)
+	with open("../Desktop/finall/中国旅游业.html", encoding="utf8", mode="r") as f:
+		plot_all = "".join(f.readlines())
+	return render_template('G.html',
+                               story='(1)无论是国际旅游外汇收入还是国内旅游总花费，这十年来都是呈增长的趋势。(2)国际旅游外汇收入在2009年-2014年平缓增长，但在2014年增长，国内旅游总花费在10年里都是平缓增长。'
+							,the_plot_all = plot_all)
+
 
 
 
@@ -129,21 +130,17 @@ def Line_base() -> Line:
 #国民总收入
 
 #数据准备
-# df = pd.read_csv("Household consumption level.csv")
+国民总收入 = pd.read_csv("Household consumption level.csv")
 
 #页面
-# @app.route('/国民总收入',methods=['POST'])
-# def CHINA_GNI():
-#     fig = 中国旅游业收入.T.iplot(kind="scatter",xTitle="年份",yTitle="金额", title="中国旅游业收入" , asFigure=True)
-#     py.offline.plot(fig, filename="国民总收入.html",auto_open=False)
-#     with open("国民总收入.html", encoding="utf8", mode="r") as f:
-#         plot_all = "".join(f.readlines())
-#     return render_template('G.html',
-#                                story='（1）从中国国民总收入（GNI）-居民消费水平组合图中可以看出，中国国民总收入（GNI）与居民消费水平在近十年来呈稳定增长的态势。<br></br>（2）中国国民总收入、居民消费水平的趋势与中国旅游业收入的趋势是一样的，在十年里呈上升趋势，因此判断两者对中国旅游业的发展有一定影响。<br></br>（3）经济稳步发展，国民总收入不断增长，居民消费水平不断提高，才有稳定的经济基础出行、旅游，不断提高自身的旅游类消费。<br></br>'
-# 							,the_plot_all = plot_all)
-
-
-
+@app.route('/国民总收入',methods=['POST'])
+def CHINA_GNI():
+ fig = 国民总收入.T.iplot(kind="scatter",xTitle="年份",yTitle="金额", title="中国旅游业收入" , asFigure=True)
+ py.offline.plot(fig, filename="国民总收入.html",auto_open=False)
+ with open("国民总收入.html", encoding="utf8", mode="r") as f:
+  plot_all = "".join(f.readlines())
+ return render_template('G.html',
+                        the_plot_all = plot_all)
 
 #中国运输客运量
 

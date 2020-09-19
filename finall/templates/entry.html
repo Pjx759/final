@@ -3,31 +3,47 @@
 
 {% block body %}
 
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#<title>旅游情况可视化</title>#}
+{#<meta charset="UTF-8">#}
+{#<meta name="viewport" content="width=device-width, initial-scale=1">#}
+{#    <link rel="stylesheet" href="../finall/static/hf.css">#}
 <!DOCTYPE html>
 <html>
 <head>
-<title>旅游情况可视化</title>
+<title>旅游业发展</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../finall/static/hf.css">
+    <link rel="stylesheet" type="text/css" href="static/color.css">
 </head>
 <body>
+
+<div class="header">
+  <h1>旅游业发展</h1>
+</head>
+</div>
+<body>
 <div class="navbar">
-    <form method="post" action="/中国运输客运量">
-        <button class="travleCN">中国运输客运量</button>
-    </form>
     <form method="post" action="/国际旅游收入折线图">
         <button class="travleCN">国际旅游收入</button>
     </form>
-{#    <form method="post" action="/国民总收入">#}
-{#        <button class="travleCN">国民总收入</button>#}
-{#    </form>#}
-{#     <form method="post" action="/中国旅游业">#}
-{#        <button class="travleCN">中国旅游业</button>#}
-{#    </form>#}
     <form method="post" action="/国际旅游收入世界地图">
-        <button class="travleCN">世界地图</button>
+        <button class="travleCN">国际旅游收入世界地图</button>
     </form>
-</div>
+    <form method="post" action="/中国旅游业">
+        <button class="travleCN">中国旅游业</button>
+    </form>
+    <form method="post" action="/国民总收入">
+        <button class="travleCN">国民总收入</button>
+    </form>
+    <form method="post" action="/中国运输客运量">
+        <button class="travleCN">中国运输客运量</button>
+    </form>
 
+</div>
+    <footer>
+    <p>姓名：彭靖茜 学号：181035022</p>
+    </footer>
 {% endblock %}
