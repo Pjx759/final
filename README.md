@@ -1,4 +1,4 @@
-##  python 期末项目：[仓库地址](https://github.com/Pjx759/final)
+##  python 期末项目：[pythonanywhere链接](http://ljc.pythonanywhere.com/)
 ### html档描述
 * 一共使用了三个HTML文档，其中有两个为基础性文档，G.html为链接文档
 * base.html为基础文档，保证整个flask的框架
