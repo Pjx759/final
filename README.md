@@ -15,4 +15,5 @@
 * 含有返回上一页按钮
 ### 本地运行效果图
 ![运行效果图](https://github.com/Pjx759/final/blob/master/%E6%9C%AC%E5%9C%B0%E6%95%88%E6%9E%9C%E5%91%88%E7%8E%B0.png)
-
+#### 项目细则文件
+* 仓库路径：[彭靖茜_finall](https://github.com/Pjx759/final/tree/master/%E5%BD%AD%E9%9D%96%E8%8C%9C-finall)
